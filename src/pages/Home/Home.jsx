@@ -1,4 +1,9 @@
 import './Home.css';
+import picture1 from '../assets/picture1.jpg';
+import picture2 from '../assets/picture2.jpg';
+import picture3 from '../assets/picture3.jpg';
+import picture4 from '../assets/picture4.jpg';
+import picture5 from '../assets/picture5.jpg';
 
 function Home() {
     return (
@@ -27,6 +32,50 @@ function Home() {
                 </div>
             </section>
 
+            {/* Project Showcase Gallery */}
+            <section className="gallery-section section">
+                <div className="container">
+                    <div className="section-header text-center">
+                        <h2>Our Projects & Expertise</h2>
+                        <p className="section-intro">
+                            Delivering excellence across automation, engineering, and digital solutions
+                        </p>
+                    </div>
+                    <div className="image-gallery">
+                        <div className="gallery-item animate-fade-in">
+                            <img src={picture1} alt="Sanota Project 1" />
+                            <div className="gallery-overlay">
+                                <h3>Industrial Automation</h3>
+                            </div>
+                        </div>
+                        <div className="gallery-item animate-fade-in">
+                            <img src={picture2} alt="Sanota Project 2" />
+                            <div className="gallery-overlay">
+                                <h3>Engineering Solutions</h3>
+                            </div>
+                        </div>
+                        <div className="gallery-item animate-fade-in">
+                            <img src={picture3} alt="Sanota Project 3" />
+                            <div className="gallery-overlay">
+                                <h3>Digital Integration</h3>
+                            </div>
+                        </div>
+                        <div className="gallery-item animate-fade-in">
+                            <img src={picture4} alt="Sanota Project 4" />
+                            <div className="gallery-overlay">
+                                <h3>System Retrofits</h3>
+                            </div>
+                        </div>
+                        <div className="gallery-item animate-fade-in">
+                            <img src={picture5} alt="Sanota Project 5" />
+                            <div className="gallery-overlay">
+                                <h3>Technical Support</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section className="section bg-gray-50">
                 <div className="container text-center">
                     <h2>Welcome to Sanota</h2>
@@ -42,3 +91,4 @@ function Home() {
 }
 
 export default Home;
+
