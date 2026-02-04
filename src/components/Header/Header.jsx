@@ -24,10 +24,6 @@ function Header() {
                             <li><Link to="/contact">Contact</Link></li>
                         </ul>
                     </nav>
-
-                    <Link to="/contact" className="cta-button">
-                        Request Consultation
-                    </Link>
                 </div>
             </div>
         </header>
