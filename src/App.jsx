@@ -4,6 +4,7 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import Solutions from './pages/Solutions/Solutions';
 import Industries from './pages/Industries/Industries';
+import CaseStudies from './pages/CaseStudies/CaseStudies';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/industries" element={<Industries />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
             {/* Additional routes will be added as we build pages */}
           </Routes>
         </main>
@@ -25,5 +27,6 @@ function App() {
 }
 
 export default App;
+
 
 
