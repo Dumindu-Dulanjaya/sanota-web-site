@@ -11,6 +11,7 @@ import ClientsExperience from './pages/ClientsExperience/ClientsExperience';
 import Products from './pages/Products/Products';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
+import Careers from './pages/Careers/Careers';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/careers" element={<Careers />} />
             {/* Additional routes will be added as we build pages */}
           </Routes>
         </main>
