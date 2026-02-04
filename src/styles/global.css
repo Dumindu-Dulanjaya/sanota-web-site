@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import './variables.css';
 
 /* Reset & Base Styles */
@@ -13,6 +13,7 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
@@ -24,6 +25,7 @@ body {
     background-color: var(--color-white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 /* Typography */
@@ -42,32 +44,40 @@ h6 {
 
 h1 {
     font-size: var(--font-size-5xl);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-extrabold);
+    letter-spacing: -0.02em;
 }
 
 h2 {
     font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: -0.01em;
 }
 
 h3 {
     font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
 }
 
 h4 {
     font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
 }
 
 h5 {
     font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
 }
 
 h6 {
     font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
 }
 
 p {
     margin-bottom: var(--spacing-md);
     color: var(--color-gray-700);
+    line-height: var(--line-height-relaxed);
 }
 
 a {
@@ -103,7 +113,7 @@ img {
     width: 100%;
     max-width: var(--container-xl);
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    padding: 0 var(--spacing-lg);
 }
 
 .container-wide {
@@ -168,6 +178,93 @@ img {
     background-color: var(--color-gray-100);
 }
 
+/* Modern Card Styles */
+.card {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Glass Effect */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.5s ease-out;
+}
+
 /* Responsive Typography */
 @media (max-width: 768px) {
     h1 {
@@ -188,6 +285,10 @@ img {
 
     .section-lg {
         padding: var(--spacing-4xl) 0;
+    }
+
+    .container {
+        padding: 0 var(--spacing-md);
     }
 }
 
