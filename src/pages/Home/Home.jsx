@@ -168,6 +168,100 @@ function Home() {
                 </div>
             </section>
 
+            {/* Nationwide Execution Section */}
+            <section className="nationwide-section section bg-gray-50">
+                <div className="container">
+                    <div className="section-header text-center">
+                        <h2>Nationwide Execution Capability</h2>
+                        <p className="section-intro">
+                            Delivering automation projects across all provinces of Sri Lanka
+                        </p>
+                    </div>
+                    <div className="nationwide-content">
+                        <div className="map-container-home">
+                            <svg viewBox="0 0 400 600" className="sri-lanka-map-home">
+                                {/* Sri Lanka Map Outline */}
+                                <path
+                                    d="M200,50 L220,80 L240,120 L250,160 L260,200 L270,250 L275,300 L270,350 L260,400 L250,450 L230,490 L210,520 L190,540 L170,550 L150,540 L130,520 L115,490 L105,450 L100,400 L95,350 L90,300 L95,250 L105,200 L120,160 L140,120 L160,80 L180,50 Z"
+                                    fill="#e0f2fe"
+                                    stroke="#0ea5e9"
+                                    strokeWidth="2"
+                                />
+                                {/* Province Markers */}
+                                <circle cx="200" cy="150" r="8" fill="#0ea5e9" className="province-marker" />
+                                <circle cx="180" cy="200" r="8" fill="#0ea5e9" className="province-marker" />
+                                <circle cx="220" cy="200" r="8" fill="#0ea5e9" className="province-marker" />
+                                <circle cx="200" cy="250" r="8" fill="#0ea5e9" className="province-marker" />
+                                <circle cx="160" cy="300" r="8" fill="#0ea5e9" className="province-marker" />
+                                <circle cx="220" cy="300" r="8" fill="#0ea5e9" className="province-marker" />
+                                <circle cx="180" cy="350" r="8" fill="#0ea5e9" className="province-marker" />
+                                <circle cx="200" cy="400" r="8" fill="#0ea5e9" className="province-marker" />
+                                <circle cx="190" cy="480" r="8" fill="#0ea5e9" className="province-marker" />
+                            </svg>
+                        </div>
+                        <div className="nationwide-stats">
+                            <div className="nationwide-stat">
+                                <div className="stat-number">9</div>
+                                <div className="stat-label">Provinces Covered</div>
+                            </div>
+                            <div className="nationwide-stat">
+                                <div className="stat-number">25+</div>
+                                <div className="stat-label">Cities Served</div>
+                            </div>
+                            <div className="nationwide-stat">
+                                <div className="stat-number">200+</div>
+                                <div className="stat-label">Projects Nationwide</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="text-center" style={{ marginTop: 'var(--spacing-2xl)' }}>
+                        <a href="/clients-experience" className="btn btn-secondary">View Our Experience</a>
+                    </div>
+                </div>
+            </section>
+
+            {/* Why Sanota Section */}
+            <section className="why-sanota-section section">
+                <div className="container">
+                    <div className="section-header text-center">
+                        <h2>Why Choose Sanota</h2>
+                        <p className="section-intro">
+                            What sets us apart as your automation and engineering partner
+                        </p>
+                    </div>
+                    <div className="why-sanota-grid">
+                        <div className="why-card">
+                            <div className="why-icon">🎯</div>
+                            <h3>Single-Point Accountability</h3>
+                            <p>
+                                One partner for your entire automation journey — from initial design through commissioning and long-term support. No coordination headaches, no finger-pointing.
+                            </p>
+                        </div>
+                        <div className="why-card">
+                            <div className="why-icon">⚙️</div>
+                            <h3>Multi-Disciplinary Engineering</h3>
+                            <p>
+                                Electrical, mechanical, software, and control systems expertise under one roof. Our integrated approach ensures seamless project execution.
+                            </p>
+                        </div>
+                        <div className="why-card">
+                            <div className="why-icon">🔄</div>
+                            <h3>Retrofit & Takeover Expertise</h3>
+                            <p>
+                                Specialized in modernizing legacy systems and taking over incomplete or problematic projects. We solve the challenges others can't.
+                            </p>
+                        </div>
+                        <div className="why-card">
+                            <div className="why-icon">🛠️</div>
+                            <h3>Long-Term AMC Support</h3>
+                            <p>
+                                Comprehensive Annual Maintenance Contracts with 24/7 support. We're committed to your systems for the long haul, not just project completion.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Case Studies Preview */}
             <section className="case-studies-section section bg-gray-50">
                 <div className="container">

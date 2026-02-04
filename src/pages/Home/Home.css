@@ -597,3 +597,126 @@
         font-size: var(--font-size-5xl);
     }
 }
+
+/* Nationwide Execution Section */
+.nationwide-section {
+    background: var(--color-gray-50);
+}
+
+.nationwide-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-4xl);
+    align-items: center;
+    margin-top: var(--spacing-3xl);
+}
+
+.map-container-home {
+    background: var(--color-white);
+    padding: var(--spacing-3xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--color-primary-light);
+}
+
+.sri-lanka-map-home {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+}
+
+.province-marker {
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.province-marker:hover {
+    r: 12;
+    fill: var(--color-secondary);
+}
+
+.nationwide-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+}
+
+.nationwide-stat {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    border: 2px solid var(--color-primary-light);
+}
+
+.nationwide-stat .stat-number {
+    font-size: var(--font-size-5xl);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1;
+}
+
+.nationwide-stat .stat-label {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-700);
+    font-weight: var(--font-weight-medium);
+}
+
+/* Why Sanota Section */
+.why-sanota-section {
+    background: var(--color-white);
+}
+
+.why-sanota-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-2xl);
+}
+
+.why-card {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    border: 2px solid var(--color-secondary);
+    transition: all var(--transition-base);
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2xl);
+}
+
+.why-icon {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.why-card h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-gray-900);
+}
+
+.why-card p {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-700);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+}
+
+/* Responsive for new sections */
+@media (max-width: 1024px) {
+    .nationwide-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-sanota-grid {
+        grid-template-columns: 1fr;
+    }
+}
