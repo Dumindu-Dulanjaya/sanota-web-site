@@ -8,6 +8,7 @@ import CaseStudies from './pages/CaseStudies/CaseStudies';
 import Insights from './pages/Insights/Insights';
 import ArticlePage from './pages/Insights/ArticlePage';
 import ClientsExperience from './pages/ClientsExperience/ClientsExperience';
+import Products from './pages/Products/Products';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/insights" element={<Insights />} />
             <Route path="/insights/:slug" element={<ArticlePage />} />
             <Route path="/clients-experience" element={<ClientsExperience />} />
+            <Route path="/products" element={<Products />} />
             {/* Additional routes will be added as we build pages */}
           </Routes>
         </main>
