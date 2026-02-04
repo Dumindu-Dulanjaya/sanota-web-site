@@ -5,6 +5,7 @@ import picture3 from '../../assets/picture3.jpg';
 import picture4 from '../../assets/picture4.jpg';
 import picture5 from '../../assets/picture5.jpg';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Home() {
     const images = [picture1, picture2, picture3, picture4, picture5];
@@ -49,8 +50,8 @@ function Home() {
                             <span className="proof-item">Nationwide Execution</span>
                         </div>
                         <div className="hero-cta">
-                            <a href="/contact" className="btn btn-primary">Request Consultation</a>
-                            <a href="/case-studies" className="btn btn-secondary">View Case Studies</a>
+                            <Link to="/contact" className="btn btn-primary">Request Consultation</Link>
+                            <Link to="/case-studies" className="btn btn-secondary">View Case Studies</Link>
                         </div>
                     </div>
                 </div>
@@ -70,25 +71,25 @@ function Home() {
                             <div className="solution-icon">🔧</div>
                             <h3>System Integration</h3>
                             <p>Complete automation system design, integration, and deployment across all industrial sectors</p>
-                            <a href="/solutions" className="solution-link">Learn More →</a>
+                            <Link to="/solutions" className="solution-link">Learn More →</Link>
                         </div>
                         <div className="solution-card">
                             <div className="solution-icon">💻</div>
                             <h3>Digital Solutions</h3>
                             <p>SCADA, HMI, MES, and custom software development for industrial operations</p>
-                            <a href="/solutions" className="solution-link">Learn More →</a>
+                            <Link to="/solutions" className="solution-link">Learn More →</Link>
                         </div>
                         <div className="solution-card">
                             <div className="solution-icon">⚙️</div>
                             <h3>Retrofits & Upgrades</h3>
                             <p>Modernize legacy systems with cutting-edge technology while minimizing downtime</p>
-                            <a href="/solutions" className="solution-link">Learn More →</a>
+                            <Link to="/solutions" className="solution-link">Learn More →</Link>
                         </div>
                         <div className="solution-card">
                             <div className="solution-icon">🛠️</div>
                             <h3>Support & Maintenance</h3>
                             <p>24/7 technical support, preventive maintenance, and rapid response services</p>
-                            <a href="/solutions" className="solution-link">Learn More →</a>
+                            <Link to="/solutions" className="solution-link">Learn More →</Link>
                         </div>
                     </div>
                 </div>
@@ -215,7 +216,7 @@ function Home() {
                         </div>
                     </div>
                     <div className="text-center" style={{ marginTop: 'var(--spacing-2xl)' }}>
-                        <a href="/clients-experience" className="btn btn-secondary">View Our Experience</a>
+                        <Link to="/clients-experience" className="btn btn-secondary">View Our Experience</Link>
                     </div>
                 </div>
             </section>
@@ -279,7 +280,7 @@ function Home() {
                             <div className="case-study-content">
                                 <h3>Complete Factory Automation</h3>
                                 <p>Implemented end-to-end automation for a leading manufacturing facility, increasing productivity by 40%</p>
-                                <a href="/case-studies" className="case-study-link">Read Case Study →</a>
+                                <Link to="/case-studies" className="case-study-link">Read Case Study →</Link>
                             </div>
                         </div>
                         <div className="case-study-card">
@@ -289,7 +290,7 @@ function Home() {
                             <div className="case-study-content">
                                 <h3>SCADA System Deployment</h3>
                                 <p>Deployed comprehensive SCADA solution for water treatment plant serving 100,000+ residents</p>
-                                <a href="/case-studies" className="case-study-link">Read Case Study →</a>
+                                <Link to="/case-studies" className="case-study-link">Read Case Study →</Link>
                             </div>
                         </div>
                         <div className="case-study-card">
@@ -299,12 +300,12 @@ function Home() {
                             <div className="case-study-content">
                                 <h3>Power Distribution Upgrade</h3>
                                 <p>Modernized power distribution system with advanced monitoring and control capabilities</p>
-                                <a href="/case-studies" className="case-study-link">Read Case Study →</a>
+                                <Link to="/case-studies" className="case-study-link">Read Case Study →</Link>
                             </div>
                         </div>
                     </div>
                     <div className="text-center" style={{ marginTop: 'var(--spacing-3xl)' }}>
-                        <a href="/case-studies" className="btn btn-primary">View All Case Studies</a>
+                        <Link to="/case-studies" className="btn btn-primary">View All Case Studies</Link>
                     </div>
                 </div>
             </section>
@@ -317,8 +318,8 @@ function Home() {
                         Let's discuss how Sanota can deliver the automation solutions your business needs
                     </p>
                     <div className="cta-buttons">
-                        <a href="/contact" className="btn btn-primary btn-lg">Request Consultation</a>
-                        <a href="/solutions" className="btn btn-secondary-light btn-lg">Explore Solutions</a>
+                        <Link to="/contact" className="btn btn-primary btn-lg">Request Consultation</Link>
+                        <Link to="/solutions" className="btn btn-secondary-light btn-lg">Explore Solutions</Link>
                     </div>
                 </div>
             </section>
