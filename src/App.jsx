@@ -22,7 +22,7 @@ function App() {
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/insights" element={<Insights />} />
             <Route path="/insights/:slug" element={<ArticlePage />} />
-            <Route path="/clients" element={<ClientsExperience />} />
+            <Route path="/clients-experience" element={<ClientsExperience />} />
             {/* Additional routes will be added as we build pages */}
           </Routes>
         </main>
