@@ -44,23 +44,21 @@
 .brand-logo {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-3xl);
+    justify-content: center;
+    margin-bottom: var(--spacing-xl);
 }
 
-.logo-icon {
-    font-size: 3rem;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: var(--radius-xl);
-    width: 80px;
+.logo-image {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.brand-logo-image {
     height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 .brand-logo h1 {

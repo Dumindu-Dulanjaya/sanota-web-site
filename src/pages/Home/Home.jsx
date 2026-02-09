@@ -8,6 +8,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MapContainer, TileLayer, CircleMarker, Popup, Tooltip } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import { motion } from 'framer-motion';
+import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, staggerItem, viewportOnce } from '../../utils/animations';
 
 function Home() {
     const images = [picture1, picture2, picture3, picture4, picture5];
@@ -51,23 +53,47 @@ function Home() {
 
                 <div className="container">
                     <div className="hero-content">
-                        <h1>End-to-End Automation & Engineering Partner</h1>
-                        <p className="hero-subtitle">
+                        <motion.h1
+                            initial="hidden"
+                            animate="visible"
+                            variants={fadeInUp}
+                        >
+                            End-to-End Automation & Engineering Partner
+                        </motion.h1>
+                        <motion.p
+                            className="hero-subtitle"
+                            initial="hidden"
+                            animate="visible"
+                            variants={fadeInUp}
+                            transition={{ delay: 0.2 }}
+                        >
                             Sanota delivers integrated automation, engineering, and digital solutions —
                             from design and integration to retrofits, software, and long-term support —
                             under one accountable partner.
-                        </p>
-                        <div className="hero-proof">
+                        </motion.p>
+                        <motion.div
+                            className="hero-proof"
+                            initial="hidden"
+                            animate="visible"
+                            variants={fadeInUp}
+                            transition={{ delay: 0.4 }}
+                        >
                             <span className="proof-item">15+ Years Experience</span>
                             <span className="proof-divider">|</span>
                             <span className="proof-item">Multi-Industry Expertise</span>
                             <span className="proof-divider">|</span>
                             <span className="proof-item">Nationwide Execution</span>
-                        </div>
-                        <div className="hero-cta">
+                        </motion.div>
+                        <motion.div
+                            className="hero-cta"
+                            initial="hidden"
+                            animate="visible"
+                            variants={fadeInUp}
+                            transition={{ delay: 0.6 }}
+                        >
                             <Link to="/contact" className="btn btn-primary">Request Consultation</Link>
                             <Link to="/case-studies" className="btn btn-secondary">View Case Studies</Link>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -75,43 +101,55 @@ function Home() {
             {/* Solutions Summary Section */}
             <section className="solutions-section section">
                 <div className="container">
-                    <div className="section-header text-center">
+                    <motion.div
+                        className="section-header text-center"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={viewportOnce}
+                        variants={fadeInUp}
+                    >
                         <h2>Comprehensive Automation Solutions</h2>
                         <p className="section-intro">
                             From concept to commissioning, we deliver complete automation and engineering solutions
                         </p>
-                    </div>
-                    <div className="solutions-grid">
-                        <div className="solution-card">
+                    </motion.div>
+                    <motion.div
+                        className="solutions-grid"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={viewportOnce}
+                        variants={staggerContainer}
+                    >
+                        <motion.div className="solution-card" variants={staggerItem}>
                             <div className="solution-icon">🔧</div>
                             <h3>System Integration</h3>
                             <p>Complete automation system design, integration, and deployment across all industrial sectors</p>
                             <Link to="/solutions" className="solution-link">Learn More →</Link>
-                        </div>
-                        <div className="solution-card">
+                        </motion.div>
+                        <motion.div className="solution-card" variants={staggerItem}>
                             <div className="solution-icon">💻</div>
                             <h3>Digital Solutions</h3>
                             <p>SCADA, HMI, MES, and custom software development for industrial operations</p>
                             <Link to="/solutions" className="solution-link">Learn More →</Link>
-                        </div>
-                        <div className="solution-card">
+                        </motion.div>
+                        <motion.div className="solution-card" variants={staggerItem}>
                             <div className="solution-icon">⚙️</div>
                             <h3>Retrofits & Upgrades</h3>
                             <p>Modernize legacy systems with cutting-edge technology while minimizing downtime</p>
                             <Link to="/solutions" className="solution-link">Learn More →</Link>
-                        </div>
-                        <div className="solution-card">
+                        </motion.div>
+                        <motion.div className="solution-card" variants={staggerItem}>
                             <div className="solution-icon">🛠️</div>
                             <h3>Support & Maintenance</h3>
                             <p>24/7 technical support, preventive maintenance, and rapid response services</p>
                             <Link to="/solutions" className="solution-link">Learn More →</Link>
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
                 </div>
-            </section>
+            </section >
 
             {/* Client Trust Section */}
-            <section className="trust-section section bg-gradient">
+            < section className="trust-section section bg-gradient" >
                 <div className="container">
                     <div className="section-header text-center">
                         <h2>Trusted by Industry Leaders</h2>
@@ -138,10 +176,10 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Industries Section */}
-            <section className="industries-section section">
+            < section className="industries-section section" >
                 <div className="container">
                     <div className="section-header text-center">
                         <h2>Industries We Serve</h2>
@@ -182,10 +220,10 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Nationwide Execution Section */}
-            <section className="nationwide-section section bg-gray-50">
+            < section className="nationwide-section section bg-gray-50" >
                 <div className="container">
                     <div className="section-header text-center">
                         <h2>Nationwide Execution Capability</h2>
@@ -273,10 +311,10 @@ function Home() {
                         <Link to="/clients-experience" className="btn btn-secondary">View Our Experience</Link>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Why Sanota Section */}
-            <section className="why-sanota-section section">
+            < section className="why-sanota-section section" >
                 <div className="container">
                     <div className="section-header text-center">
                         <h2>Why Choose Sanota</h2>
@@ -315,10 +353,10 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Case Studies Preview */}
-            <section className="case-studies-section section bg-gray-50">
+            < section className="case-studies-section section bg-gray-50" >
                 <div className="container">
                     <div className="section-header text-center">
                         <h2>Featured Case Studies</h2>
@@ -362,10 +400,10 @@ function Home() {
                         <Link to="/case-studies" className="btn btn-primary">View All Case Studies</Link>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Final CTA Section */}
-            <section className="cta-section section bg-gradient">
+            < section className="cta-section section bg-gradient" >
                 <div className="container text-center">
                     <h2>Ready to Transform Your Operations?</h2>
                     <p className="section-intro-light">
@@ -376,8 +414,8 @@ function Home() {
                         <Link to="/solutions" className="btn btn-secondary-light btn-lg">Explore Solutions</Link>
                     </div>
                 </div>
-            </section>
-        </div>
+            </section >
+        </div >
     );
 }
 

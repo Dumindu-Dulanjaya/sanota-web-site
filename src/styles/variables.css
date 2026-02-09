@@ -1,15 +1,18 @@
 :root {
-  /* Colors - Modern Professional Palette */
+  /* Colors - Original Professional Blue Palette */
+  /* Primary - Professional Blue */
   --color-primary: #0f4c81;
   --color-primary-dark: #0a3a61;
   --color-primary-light: #1e5fa0;
   --color-primary-lighter: #e8f2f9;
 
+  /* Secondary - Green */
   --color-secondary: #16a34a;
   --color-secondary-dark: #15803d;
   --color-secondary-light: #22c55e;
   --color-secondary-lighter: #dcfce7;
 
+  /* Accent - Orange */
   --color-accent: #ea580c;
   --color-accent-dark: #c2410c;
   --color-accent-light: #f97316;
@@ -29,10 +32,11 @@
   --color-gray-900: #111827;
   --color-black: #000000;
 
-  /* Gradient Colors */
+  /* Gradient Colors - Original Blue Theme */
   --gradient-primary: linear-gradient(135deg, #0f4c81 0%, #1e5fa0 100%);
   --gradient-secondary: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
   --gradient-accent: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+  --gradient-hero: linear-gradient(135deg, #0a3a61 0%, #0f4c81 50%, #16a34a 100%);
   --gradient-dark: linear-gradient(135deg, #1f2937 0%, #111827 100%);
   --gradient-light: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
 
@@ -133,7 +137,7 @@
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 
-  /* Modern Glow Effects */
+  /* Modern Glow Effects - Blue Theme */
   --glow-primary: 0 0 20px rgba(15, 76, 129, 0.3);
   --glow-accent: 0 0 20px rgba(234, 88, 12, 0.3);
   --glow-secondary: 0 0 20px rgba(22, 163, 74, 0.3);

@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import './SignUp.css';
+import sanotalogo from '../../assets/sanotalogo.png';
 
 function SignUp() {
     const navigate = useNavigate();
@@ -113,8 +114,7 @@ function SignUp() {
                 <div className="signup-branding">
                     <div className="branding-content">
                         <div className="brand-logo">
-                            <div className="logo-icon">⚡</div>
-                            <h1>Sanota</h1>
+                            <img src={sanotalogo} alt="Sanota" className="brand-logo-image" />
                         </div>
                         <h2 className="welcome-title">Join Sanota</h2>
                         <p className="welcome-subtitle">
