@@ -1,4 +1,6 @@
 import { Helmet } from 'react-helmet-async';
+import { MapContainer, TileLayer, CircleMarker, Popup, Tooltip } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 import './ClientsExperience.css';
 
 function ClientsExperience() {
@@ -79,15 +81,15 @@ function ClientsExperience() {
     ];
 
     const provinces = [
-        { name: 'Western Province', projects: 85, cities: ['Colombo', 'Gampaha', 'Kalutara'] },
-        { name: 'Central Province', projects: 28, cities: ['Kandy', 'Matale', 'Nuwara Eliya'] },
-        { name: 'Southern Province', projects: 22, cities: ['Galle', 'Matara', 'Hambantota'] },
-        { name: 'Northern Province', projects: 12, cities: ['Jaffna', 'Kilinochchi', 'Mannar'] },
-        { name: 'Eastern Province', projects: 15, cities: ['Trincomalee', 'Batticaloa', 'Ampara'] },
-        { name: 'North Western Province', projects: 18, cities: ['Kurunegala', 'Puttalam'] },
-        { name: 'North Central Province', projects: 14, cities: ['Anuradhapura', 'Polonnaruwa'] },
-        { name: 'Uva Province', projects: 10, cities: ['Badulla', 'Monaragala'] },
-        { name: 'Sabaragamuwa Province', projects: 16, cities: ['Ratnapura', 'Kegalle'] }
+        { name: 'Western Province', projects: 85, cities: ['Colombo', 'Gampaha', 'Kalutara'], coords: [6.9271, 79.8612] },
+        { name: 'Central Province', projects: 28, cities: ['Kandy', 'Matale', 'Nuwara Eliya'], coords: [7.2906, 80.6337] },
+        { name: 'Southern Province', projects: 22, cities: ['Galle', 'Matara', 'Hambantota'], coords: [6.0535, 80.2210] },
+        { name: 'Northern Province', projects: 12, cities: ['Jaffna', 'Kilinochchi', 'Mannar'], coords: [9.6615, 80.0255] },
+        { name: 'Eastern Province', projects: 15, cities: ['Trincomalee', 'Batticaloa', 'Ampara'], coords: [8.5874, 81.2152] },
+        { name: 'North Western Province', projects: 18, cities: ['Kurunegala', 'Puttalam'], coords: [7.4863, 80.3623] },
+        { name: 'North Central Province', projects: 14, cities: ['Anuradhapura', 'Polonnaruwa'], coords: [8.3114, 80.4037] },
+        { name: 'Uva Province', projects: 10, cities: ['Badulla', 'Monaragala'], coords: [6.9934, 81.0550] },
+        { name: 'Sabaragamuwa Province', projects: 16, cities: ['Ratnapura', 'Kegalle'], coords: [6.6828, 80.4014] }
     ];
 
     const stats = [
@@ -191,32 +193,70 @@ function ClientsExperience() {
                         </p>
                     </div>
 
-                    <div className="map-container">
-                        <div className="sri-lanka-map">
-                            <svg viewBox="0 0 400 600" className="map-svg">
-                                {/* Sri Lanka outline - simplified */}
-                                <path
-                                    d="M 200 50 L 220 80 L 240 120 L 250 160 L 260 200 L 270 250 L 275 300 L 270 350 L 260 400 L 250 450 L 230 490 L 210 520 L 190 540 L 170 550 L 150 540 L 130 520 L 115 490 L 105 450 L 100 400 L 95 350 L 90 300 L 95 250 L 105 200 L 120 160 L 140 120 L 160 80 L 180 50 Z"
-                                    className="map-outline"
-                                    fill="#e0f2fe"
-                                    stroke="#0ea5e9"
-                                    strokeWidth="2"
+                    <div className="map-container-full">
+                        {/* Leaflet Interactive Map - Full Width */}
+                        <div className="leaflet-map-wrapper">
+                            <MapContainer
+                                center={[7.8731, 80.7718]} // Center of Sri Lanka
+                                zoom={7}
+                                minZoom={7}
+                                maxZoom={10}
+                                scrollWheelZoom={false}
+                                style={{ height: '600px', width: '100%', borderRadius: '16px' }}
+                            >
+                                <TileLayer
+                                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                                 />
 
-                                {/* Province markers */}
-                                <circle cx="180" cy="100" r="8" className="province-marker" data-province="Western" />
-                                <circle cx="200" cy="180" r="6" className="province-marker" data-province="Central" />
-                                <circle cx="170" cy="400" r="6" className="province-marker" data-province="Southern" />
-                                <circle cx="200" cy="70" r="5" className="province-marker" data-province="Northern" />
-                                <circle cx="240" cy="200" r="5" className="province-marker" data-province="Eastern" />
-                                <circle cx="140" cy="150" r="5" className="province-marker" data-province="NW" />
-                                <circle cx="180" cy="140" r="5" className="province-marker" data-province="NC" />
-                                <circle cx="220" cy="300" r="5" className="province-marker" data-province="Uva" />
-                                <circle cx="150" cy="250" r="5" className="province-marker" data-province="Sabaragamuwa" />
-                            </svg>
+                                {/* Province Markers */}
+                                {provinces.map((province, index) => (
+                                    <CircleMarker
+                                        key={index}
+                                        center={province.coords}
+                                        radius={province.projects / 5} // Size based on project count
+                                        fillColor="#10b981"
+                                        color="#fff"
+                                        weight={2}
+                                        opacity={1}
+                                        fillOpacity={0.7}
+                                        eventHandlers={{
+                                            mouseover: (e) => {
+                                                e.target.setStyle({
+                                                    fillColor: '#ea580c',
+                                                    fillOpacity: 0.9
+                                                });
+                                            },
+                                            mouseout: (e) => {
+                                                e.target.setStyle({
+                                                    fillColor: '#10b981',
+                                                    fillOpacity: 0.7
+                                                });
+                                            }
+                                        }}
+                                    >
+                                        <Popup>
+                                            <div className="map-popup">
+                                                <h4>{province.name}</h4>
+                                                <p className="popup-projects">
+                                                    <strong>{province.projects} Projects</strong>
+                                                </p>
+                                                <p className="popup-cities">
+                                                    {province.cities.join(' • ')}
+                                                </p>
+                                            </div>
+                                        </Popup>
+                                        <Tooltip direction="top" offset={[0, -10]} opacity={0.9}>
+                                            <strong>{province.name}</strong><br />
+                                            {province.projects} Projects
+                                        </Tooltip>
+                                    </CircleMarker>
+                                ))}
+                            </MapContainer>
                         </div>
 
-                        <div className="provinces-list">
+                        {/* Provinces List - Below Map */}
+                        <div className="provinces-grid">
                             {provinces.map((province, index) => (
                                 <div key={index} className="province-item">
                                     <div className="province-header">

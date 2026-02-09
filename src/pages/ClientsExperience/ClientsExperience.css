@@ -243,19 +243,142 @@
     font-size: var(--font-size-lg);
 }
 
+.map-container-full {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3xl);
+    margin-top: var(--spacing-4xl);
+}
+
 .map-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-4xl);
     margin-top: var(--spacing-4xl);
-    align-items: center;
+    align-items: start;
+}
+
+/* Leaflet Map Wrapper */
+.leaflet-map-wrapper {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-xl);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.leaflet-map-wrapper .leaflet-container {
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Floating Project Count Badges on Map */
+.map-project-badges {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    padding: var(--spacing-lg);
+}
+
+.project-badge-float {
+    position: absolute;
+    pointer-events: auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+.project-badge-float:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.project-badge-float:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.project-badge-float:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+.project-badge-float:nth-child(5) {
+    animation-delay: 2s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.badge-count {
+    display: inline-block;
+    background: var(--gradient-accent);
+    color: var(--color-white);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.4);
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+}
+
+.badge-count:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(234, 88, 12, 0.6);
+}
+
+/* Custom Popup Styling */
+.map-popup h4 {
+    margin: 0 0 var(--spacing-xs) 0;
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+}
+
+.popup-projects {
+    margin: var(--spacing-xs) 0;
+    color: var(--color-accent);
+    font-size: var(--font-size-base);
+}
+
+.popup-cities {
+    margin: var(--spacing-xs) 0 0 0;
+    color: var(--color-gray-600);
+    font-size: var(--font-size-sm);
+}
+
+/* Leaflet Tooltip Customization */
+.leaflet-tooltip {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: none !important;
+    border-radius: var(--radius-md) !important;
+    padding: var(--spacing-xs) var(--spacing-sm) !important;
+    font-weight: var(--font-weight-medium) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.leaflet-tooltip-top:before {
+    border-top-color: rgba(0, 0, 0, 0.8) !important;
 }
 
 .sri-lanka-map {
+    position: relative;
     background: rgba(255, 255, 255, 0.1);
     padding: var(--spacing-3xl);
     border-radius: var(--radius-xl);
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .map-svg {
@@ -272,23 +395,117 @@
     fill: #bfdbfe;
 }
 
-.province-marker {
-    fill: var(--color-secondary);
-    stroke: var(--color-white);
-    stroke-width: 2;
+/* Location markers with pulse animation */
+.location-marker {
     cursor: pointer;
     transition: all var(--transition-fast);
 }
 
-.province-marker:hover {
-    fill: var(--color-accent);
-    r: 10;
+.marker-dot {
+    transition: all var(--transition-fast);
+}
+
+.marker-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.2);
+    }
+}
+
+.location-marker:hover .marker-dot {
+    fill: #ea580c !important;
+    r: 8;
+}
+
+.location-marker:hover .marker-pulse {
+    animation: none;
+    opacity: 0.5;
+}
+
+/* Project count badges */
+.project-badges {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.project-badge {
+    position: absolute;
+    pointer-events: auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+.project-badge:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.project-badge:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.project-badge:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+.project-badge:nth-child(5) {
+    animation-delay: 2s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.badge-count {
+    display: inline-block;
+    background: var(--gradient-accent);
+    color: var(--color-white);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.4);
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+}
+
+.badge-count:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(234, 88, 12, 0.6);
 }
 
 .provinces-list {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
+}
+
+/* Provinces Grid - for full-width map layout */
+.provinces-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
 }
 
 .province-item {
