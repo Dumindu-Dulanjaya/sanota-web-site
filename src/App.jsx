@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
@@ -16,29 +17,31 @@ import Login from './pages/Login/Login';
 
 function App() {
   return (
-    <Router>
-      <div className="app">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/solutions" element={<Solutions />} />
-            <Route path="/industries" element={<Industries />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/insights" element={<Insights />} />
-            <Route path="/insights/:slug" element={<ArticlePage />} />
-            <Route path="/clients-experience" element={<ClientsExperience />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/careers" element={<Careers />} />
-            <Route path="/login" element={<Login />} />
-            {/* Additional routes will be added as we build pages */}
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div className="app">
+          <Header />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/solutions" element={<Solutions />} />
+              <Route path="/industries" element={<Industries />} />
+              <Route path="/case-studies" element={<CaseStudies />} />
+              <Route path="/insights" element={<Insights />} />
+              <Route path="/insights/:slug" element={<ArticlePage />} />
+              <Route path="/clients-experience" element={<ClientsExperience />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/careers" element={<Careers />} />
+              <Route path="/login" element={<Login />} />
+              {/* Additional routes will be added as we build pages */}
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 import './Login.css';
 
 function Login() {
     const navigate = useNavigate();
+    const { login } = useAuth();
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -30,6 +32,9 @@ function Login() {
         setTimeout(() => {
             // Simple validation for demo purposes
             if (formData.email && formData.password) {
+                // Save user data to context
+                login(formData.email, formData.password);
+
                 setFormStatus({
                     type: 'success',
                     message: 'Login successful! Redirecting...'
