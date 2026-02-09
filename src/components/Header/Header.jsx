@@ -6,11 +6,12 @@ import './Header.css';
 function Header() {
     const { user, isAuthenticated, logout } = useAuth();
     const navigate = useNavigate();
-    const [showDropdown, setShowDropdown] = useState(false);
+    const [showUserDropdown, setShowUserDropdown] = useState(false);
+    const [showResourcesDropdown, setShowResourcesDropdown] = useState(false);
 
     const handleLogout = () => {
         logout();
-        setShowDropdown(false);
+        setShowUserDropdown(false);
         navigate('/');
     };
 
@@ -26,11 +27,53 @@ function Header() {
                         <ul className="nav-list">
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/solutions">Solutions</Link></li>
-                            <li><Link to="/industries">Industries</Link></li>
-                            <li><Link to="/clients-experience">Clients & Experience</Link></li>
-                            <li><Link to="/case-studies">Case Studies</Link></li>
                             <li><Link to="/products">Products</Link></li>
-                            <li><Link to="/insights">Insights</Link></li>
+
+                            {/* Resources Dropdown */}
+                            <li
+                                className="nav-dropdown"
+                                onMouseEnter={() => setShowResourcesDropdown(true)}
+                                onMouseLeave={() => setShowResourcesDropdown(false)}
+                            >
+                                <button className="nav-dropdown-button">
+                                    Resources
+                                    <span className="nav-dropdown-arrow">▼</span>
+                                </button>
+
+                                {showResourcesDropdown && (
+                                    <div className="nav-dropdown-menu">
+                                        <Link to="/industries" className="nav-dropdown-item">
+                                            <span className="nav-dropdown-icon">🏭</span>
+                                            <div className="nav-dropdown-content">
+                                                <span className="nav-dropdown-title">Industries</span>
+                                                <span className="nav-dropdown-desc">Sectors we serve</span>
+                                            </div>
+                                        </Link>
+                                        <Link to="/clients-experience" className="nav-dropdown-item">
+                                            <span className="nav-dropdown-icon">🤝</span>
+                                            <div className="nav-dropdown-content">
+                                                <span className="nav-dropdown-title">Clients & Experience</span>
+                                                <span className="nav-dropdown-desc">Our client portfolio</span>
+                                            </div>
+                                        </Link>
+                                        <Link to="/case-studies" className="nav-dropdown-item">
+                                            <span className="nav-dropdown-icon">📊</span>
+                                            <div className="nav-dropdown-content">
+                                                <span className="nav-dropdown-title">Case Studies</span>
+                                                <span className="nav-dropdown-desc">Success stories</span>
+                                            </div>
+                                        </Link>
+                                        <Link to="/insights" className="nav-dropdown-item">
+                                            <span className="nav-dropdown-icon">💡</span>
+                                            <div className="nav-dropdown-content">
+                                                <span className="nav-dropdown-title">Insights</span>
+                                                <span className="nav-dropdown-desc">Industry knowledge</span>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                )}
+                            </li>
+
                             <li><Link to="/about">About Sanota</Link></li>
                             <li><Link to="/careers">Careers</Link></li>
                             <li><Link to="/contact">Contact</Link></li>
@@ -42,15 +85,15 @@ function Header() {
                         <div className="user-profile">
                             <button
                                 className="user-profile-button"
-                                onClick={() => setShowDropdown(!showDropdown)}
-                                onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
+                                onClick={() => setShowUserDropdown(!showUserDropdown)}
+                                onBlur={() => setTimeout(() => setShowUserDropdown(false), 200)}
                             >
                                 <span className="user-icon">👤</span>
                                 <span className="user-name">{user.username}</span>
                                 <span className="dropdown-arrow">▼</span>
                             </button>
 
-                            {showDropdown && (
+                            {showUserDropdown && (
                                 <div className="user-dropdown">
                                     <div className="dropdown-header">
                                         <div className="dropdown-user-info">
