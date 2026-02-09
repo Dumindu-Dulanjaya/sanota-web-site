@@ -62,7 +62,13 @@ function Header() {
                                         </div>
                                     </div>
                                     <div className="dropdown-divider"></div>
-                                    <button className="dropdown-item" onClick={handleLogout}>
+                                    <button
+                                        className="dropdown-item"
+                                        onMouseDown={(e) => {
+                                            e.preventDefault();
+                                            handleLogout();
+                                        }}
+                                    >
                                         <span className="dropdown-item-icon">🚪</span>
                                         Logout
                                     </button>
