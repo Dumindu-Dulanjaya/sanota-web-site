@@ -26,7 +26,6 @@ function Header() {
 
                     <nav className="nav">
                         <ul className="nav-list">
-                            <li><Link to="/">Home</Link></li>
                             <li><Link to="/solutions">Solutions</Link></li>
                             <li><Link to="/products">Products</Link></li>
 
