@@ -318,6 +318,26 @@
     box-shadow: var(--shadow-lg);
 }
 
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    display: block;
+}
+
+.map-address-info {
+    padding: var(--spacing-2xl);
+    text-align: center;
+    background: var(--color-white);
+    border-top: 2px solid var(--color-gray-200);
+}
+
+.map-address-info p {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-700);
+    margin-bottom: var(--spacing-lg);
+}
+
 .map-placeholder {
     padding: var(--spacing-5xl);
     text-align: center;

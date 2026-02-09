@@ -112,8 +112,8 @@ function Contact() {
                         <div className="contact-method-card">
                             <div className="method-icon">📍</div>
                             <h3>Office</h3>
-                            <p className="method-value">123 Automation Avenue</p>
-                            <p className="method-hours">Colombo 05, Sri Lanka</p>
+                            <p className="method-value">No.5, Charlie Mount Industrial zone</p>
+                            <p className="method-hours">Udukawa, Weligama, Sri Lanka</p>
                         </div>
                         <div className="contact-method-card">
                             <div className="method-icon">🚨</div>
@@ -282,10 +282,24 @@ function Contact() {
                 <div className="container">
                     <h2 className="text-center">Visit Our Office</h2>
                     <div className="map-container">
-                        <div className="map-placeholder">
-                            <div className="map-icon">🗺️</div>
-                            <p>123 Automation Avenue, Colombo 05, Sri Lanka</p>
-                            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.9876543210!2d80.4289!3d5.9739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwNTgnMjYuMCJOIDgwwrAyNSc0NC4wIkU!5e0!3m2!1sen!2slk!4v1234567890"
+                            width="100%"
+                            height="450"
+                            style={{ border: 0 }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Sanota Office Location - Weligama"
+                        ></iframe>
+                        <div className="map-address-info">
+                            <p><strong>📍 No.5, Charlie Mount Industrial zone, Udukawa, Weligama, Sri Lanka</strong></p>
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=Weligama,Sri+Lanka"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-secondary"
+                            >
                                 Open in Google Maps
                             </a>
                         </div>
