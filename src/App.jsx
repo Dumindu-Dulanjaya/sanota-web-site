@@ -11,6 +11,7 @@ import ArticlePage from './pages/Insights/ArticlePage';
 import ClientsExperience from './pages/ClientsExperience/ClientsExperience';
 import Products from './pages/Products/Products';
 import About from './pages/About/About';
+import Company from './pages/Company/Company';
 import Contact from './pages/Contact/Contact';
 import Careers from './pages/Careers/Careers';
 import Login from './pages/Login/Login';
@@ -33,6 +34,7 @@ function App() {
               <Route path="/clients-experience" element={<ClientsExperience />} />
               <Route path="/products" element={<Products />} />
               <Route path="/about" element={<About />} />
+              <Route path="/company" element={<Company />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/careers" element={<Careers />} />
               <Route path="/login" element={<Login />} />

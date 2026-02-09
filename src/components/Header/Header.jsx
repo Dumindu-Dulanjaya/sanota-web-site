@@ -74,6 +74,7 @@ function Header() {
                                 )}
                             </li>
 
+                            <li><Link to="/company">Company</Link></li>
                             <li><Link to="/about">About Sanota</Link></li>
                             <li><Link to="/careers">Careers</Link></li>
                             <li><Link to="/contact">Contact</Link></li>
