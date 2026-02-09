@@ -612,11 +612,51 @@
 }
 
 .map-container-home {
-    background: var(--color-white);
-    padding: var(--spacing-3xl);
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-lg);
     border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-lg);
-    border: 2px solid var(--color-primary-light);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.map-container-home .leaflet-container {
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Leaflet Popup Styling for Home Page */
+.map-popup h4 {
+    margin: 0 0 var(--spacing-xs) 0;
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+}
+
+.popup-projects {
+    margin: var(--spacing-xs) 0;
+    color: var(--color-accent);
+    font-size: var(--font-size-base);
+}
+
+.popup-cities {
+    margin: var(--spacing-xs) 0 0 0;
+    color: var(--color-gray-600);
+    font-size: var(--font-size-sm);
+}
+
+/* Leaflet Tooltip Customization */
+.leaflet-tooltip {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: none !important;
+    border-radius: var(--radius-md) !important;
+    padding: var(--spacing-xs) var(--spacing-sm) !important;
+    font-weight: var(--font-weight-medium) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.leaflet-tooltip-top:before {
+    border-top-color: rgba(0, 0, 0, 0.8) !important;
 }
 
 .sri-lanka-map-home {
