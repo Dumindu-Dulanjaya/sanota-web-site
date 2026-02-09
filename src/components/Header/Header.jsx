@@ -8,6 +8,7 @@ function Header() {
     const navigate = useNavigate();
     const [showUserDropdown, setShowUserDropdown] = useState(false);
     const [showResourcesDropdown, setShowResourcesDropdown] = useState(false);
+    const [showCompanyDropdown, setShowCompanyDropdown] = useState(false);
 
     const handleLogout = () => {
         logout();
@@ -74,9 +75,37 @@ function Header() {
                                 )}
                             </li>
 
-                            <li><Link to="/company">Company</Link></li>
-                            <li><Link to="/about">About Sanota</Link></li>
-                            <li><Link to="/careers">Careers</Link></li>
+                            {/* Company Dropdown */}
+                            <li
+                                className="nav-dropdown"
+                                onMouseEnter={() => setShowCompanyDropdown(true)}
+                                onMouseLeave={() => setShowCompanyDropdown(false)}
+                            >
+                                <button className="nav-dropdown-button">
+                                    Company
+                                    <span className="nav-dropdown-arrow">▼</span>
+                                </button>
+
+                                {showCompanyDropdown && (
+                                    <div className="nav-dropdown-menu">
+                                        <Link to="/about" className="nav-dropdown-item">
+                                            <span className="nav-dropdown-icon">ℹ️</span>
+                                            <div className="nav-dropdown-content">
+                                                <span className="nav-dropdown-title">About Sanota</span>
+                                                <span className="nav-dropdown-desc">Our story & values</span>
+                                            </div>
+                                        </Link>
+                                        <Link to="/careers" className="nav-dropdown-item">
+                                            <span className="nav-dropdown-icon">💼</span>
+                                            <div className="nav-dropdown-content">
+                                                <span className="nav-dropdown-title">Careers</span>
+                                                <span className="nav-dropdown-desc">Join our team</span>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                )}
+                            </li>
+
                             <li><Link to="/contact">Contact</Link></li>
                         </ul>
                     </nav>
