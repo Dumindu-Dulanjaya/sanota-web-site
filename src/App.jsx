@@ -14,6 +14,7 @@ import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Careers from './pages/Careers/Careers';
 import Login from './pages/Login/Login';
+import SignUp from './pages/SignUp/SignUp';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/careers" element={<Careers />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<SignUp />} />
               {/* Additional routes will be added as we build pages */}
             </Routes>
           </main>

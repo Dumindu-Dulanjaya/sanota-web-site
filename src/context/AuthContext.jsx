@@ -48,12 +48,50 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem('user');
     };
 
+    const signup = (fullName, email, password) => {
+        // Get existing users from localStorage
+        const existingUsers = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
+
+        // Check if email already exists
+        const emailExists = existingUsers.some(u => u.email.toLowerCase() === email.toLowerCase());
+        if (emailExists) {
+            return { success: false, error: 'Email already registered. Please sign in instead.' };
+        }
+
+        // Create new user
+        const newUser = {
+            fullName,
+            email,
+            password, // In production, NEVER store passwords client-side!
+            registeredAt: new Date().toISOString()
+        };
+
+        // Add to registered users
+        existingUsers.push(newUser);
+        localStorage.setItem('registeredUsers', JSON.stringify(existingUsers));
+
+        // Auto-login the user
+        const username = email.split('@')[0];
+        const userData = {
+            email,
+            username,
+            fullName,
+            loginTime: new Date().toISOString()
+        };
+
+        setUser(userData);
+        localStorage.setItem('user', JSON.stringify(userData));
+
+        return { success: true, user: userData };
+    };
+
     const value = {
         user,
         isLoading,
         isAuthenticated: !!user,
         login,
-        logout
+        logout,
+        signup
     };
 
     return (

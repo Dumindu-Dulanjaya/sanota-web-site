@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import './Login.css';
 
@@ -177,9 +177,9 @@ function Login() {
                         <div className="form-footer">
                             <p>
                                 Don't have an account?{' '}
-                                <a href="/contact" className="signup-link">
-                                    Contact us
-                                </a>
+                                <Link to="/signup" className="signup-link">
+                                    Sign up
+                                </Link>
                             </p>
                         </div>
 
