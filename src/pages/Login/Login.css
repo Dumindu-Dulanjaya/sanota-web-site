@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--color-gray-50);
+    background: var(--color-background);
 }
 
 .login-container {
@@ -12,8 +12,9 @@
     width: 100%;
     max-width: 1400px;
     min-height: 100vh;
-    background: var(--color-white);
+    background: var(--color-surface);
     box-shadow: var(--shadow-2xl);
+    border: 1px solid var(--glass-border);
 }
 
 /* Left Side - Branding */
@@ -103,7 +104,7 @@
     align-items: center;
     gap: var(--spacing-md);
     padding: var(--spacing-md);
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--glass-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -123,7 +124,7 @@
 .feature-text {
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-medium);
-    color: var(--color-white);
+    color: var(--color-text-main);
 }
 
 /* Right Side - Login Form */
@@ -132,7 +133,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--color-white);
+    background: var(--color-surface);
 }
 
 .form-wrapper {
@@ -148,13 +149,13 @@
 .form-header h2 {
     font-size: var(--font-size-4xl);
     font-weight: var(--font-weight-extrabold);
-    color: var(--color-gray-900);
+    color: var(--color-text-main);
     margin-bottom: var(--spacing-sm);
 }
 
 .form-header p {
     font-size: var(--font-size-base);
-    color: var(--color-gray-600);
+    color: var(--color-text-muted);
     margin: 0;
 }
 
@@ -174,7 +175,7 @@
 .form-group label {
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
-    color: var(--color-gray-700);
+    color: var(--color-text-muted);
 }
 
 .input-wrapper {
@@ -193,12 +194,13 @@
 .input-wrapper input {
     width: 100%;
     padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 3rem;
-    border: 2px solid var(--color-gray-300);
+    border: 2px solid var(--glass-border);
     border-radius: var(--radius-lg);
     font-size: var(--font-size-base);
     font-family: inherit;
     transition: all var(--transition-base);
-    background: var(--color-white);
+    background: var(--color-background);
+    color: var(--color-text-main);
 }
 
 .input-wrapper input:focus {
@@ -213,7 +215,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1.25rem;
+    color: var(--color-text-muted);
     padding: var(--spacing-xs);
     transition: transform var(--transition-fast);
 }
@@ -236,7 +238,7 @@
     gap: var(--spacing-xs);
     cursor: pointer;
     font-size: var(--font-size-sm);
-    color: var(--color-gray-700);
+    color: var(--color-text-muted);
 }
 
 .checkbox-label input[type="checkbox"] {
@@ -356,7 +358,7 @@
 
 .form-footer p {
     font-size: var(--font-size-sm);
-    color: var(--color-gray-600);
+    color: var(--color-text-muted);
     margin: 0;
 }
 
@@ -406,19 +408,19 @@
     justify-content: center;
     gap: var(--spacing-sm);
     padding: var(--spacing-md);
-    background: var(--color-white);
-    border: 2px solid var(--color-gray-300);
+    background: var(--color-surface);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-medium);
-    color: var(--color-gray-700);
+    color: var(--color-text-main);
     cursor: pointer;
     transition: all var(--transition-base);
 }
 
 .social-btn:hover {
     border-color: var(--color-primary);
-    background: var(--color-gray-50);
+    background: var(--color-surface-hover);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }

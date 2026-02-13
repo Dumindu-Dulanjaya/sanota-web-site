@@ -390,14 +390,14 @@
 }
 
 .btn-primary {
-    background: var(--gradient-accent);
+    background: #2233AD;
     color: var(--color-white);
-    box-shadow: 0 4px 14px rgba(234, 88, 12, 0.4);
+    box-shadow: 0 4px 14px rgba(34, 51, 173, 0.4);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(234, 88, 12, 0.5);
+    box-shadow: 0 6px 20px rgba(34, 51, 173, 0.5);
     color: var(--color-white);
 }
 

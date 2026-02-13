@@ -184,6 +184,8 @@
 }
 
 .btn-primary {
+    background: #2233AD !important;
+    border-color: #2233AD !important;
     background: var(--gradient-accent);
     color: var(--color-white);
     box-shadow: var(--shadow-md);

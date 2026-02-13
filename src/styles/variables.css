@@ -1,78 +1,84 @@
 :root {
-  /* Colors - Original Professional Blue Palette */
-  /* Primary - Professional Blue */
-  --color-primary: #0f4c81;
-  --color-primary-dark: #0a3a61;
-  --color-primary-light: #1e5fa0;
-  --color-primary-lighter: #e8f2f9;
+  /* Dark Theme Palette */
 
-  /* Secondary - Green */
-  --color-secondary: #16a34a;
-  --color-secondary-dark: #15803d;
-  --color-secondary-light: #22c55e;
-  --color-secondary-lighter: #dcfce7;
+  /* Primary - Vivid Blue (Engineering/Trust) */
+  --color-primary: #2233AD;
+  --color-primary-dark: #1a288a;
+  --color-primary-light: #4455d3;
+  --color-primary-lighter: #eef1ff;
 
-  /* Accent - Orange */
-  --color-accent: #ea580c;
-  --color-accent-dark: #c2410c;
-  --color-accent-light: #f97316;
-  --color-accent-lighter: #ffedd5;
+  /* Secondary - Teal/Cyan (Technical accents) */
+  --color-secondary: #06b6d4;
+  --color-secondary-dark: #0891b2;
+  --color-secondary-light: #22d3ee;
+  --color-secondary-lighter: #ecfeff;
 
-  /* Neutral Colors */
+  /* Accent - Blue (Trust/Engineering) */
+  --color-accent: #3b82f6;
+  --color-accent-dark: #2563eb;
+  --color-accent-light: #60a5fa;
+  --color-accent-lighter: #eff6ff;
+
+  /* Neutral Colors - Dark Mode Base */
+  --color-background: #0f172a;
+  /* Slate 900 */
+  --color-surface: #1e293b;
+  /* Slate 800 */
+  --color-surface-hover: #334155;
+  /* Slate 700 */
+
   --color-white: #ffffff;
-  --color-gray-50: #f9fafb;
-  --color-gray-100: #f3f4f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-800: #1f2937;
-  --color-gray-900: #111827;
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e1;
+  --color-gray-400: #94a3b8;
+  --color-gray-500: #64748b;
+  --color-gray-600: #475569;
+  --color-gray-700: #334155;
+  --color-gray-800: #1e293b;
+  --color-gray-900: #0f172a;
   --color-black: #000000;
 
-  /* Gradient Colors - Original Blue Theme */
-  --gradient-primary: linear-gradient(135deg, #0f4c81 0%, #1e5fa0 100%);
-  --gradient-secondary: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
-  --gradient-accent: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
-  --gradient-hero: linear-gradient(135deg, #0a3a61 0%, #0f4c81 50%, #16a34a 100%);
-  --gradient-dark: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-  --gradient-light: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+  /* Text Colors */
+  --color-text-main: #f8fafc;
+  /* White-ish */
+  --color-text-muted: #94a3b8;
+  /* Gray */
+  --color-text-dark: #0f172a;
+  /* Dark text for light elements if any */
 
-  /* Modern Overlays */
-  --overlay-dark: rgba(0, 0, 0, 0.5);
-  --overlay-light: rgba(255, 255, 255, 0.9);
-  --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
+  /* Gradient Colors - Modern Dark & Vibrant */
+  --gradient-primary: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  --gradient-hero: linear-gradient(to right bottom, #0f172a, #1e293b);
+  --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --gradient-glow: radial-gradient(circle at center, rgba(249, 115, 22, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+
+  /* Modern Overlays & Glassmorphism */
+  --overlay-dark: rgba(15, 23, 42, 0.8);
+  --overlay-light: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-backdrop: blur(12px);
 
   /* Typography */
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-primary: 'Questrial', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Quattrocento Sans', 'Inter', system-ui, sans-serif;
 
   /* Font Sizes */
   --font-size-xs: 0.75rem;
-  /* 12px */
   --font-size-sm: 0.875rem;
-  /* 14px */
   --font-size-base: 1rem;
-  /* 16px */
   --font-size-lg: 1.125rem;
-  /* 18px */
   --font-size-xl: 1.25rem;
-  /* 20px */
   --font-size-2xl: 1.5rem;
-  /* 24px */
   --font-size-3xl: 1.875rem;
-  /* 30px */
   --font-size-4xl: 2.25rem;
-  /* 36px */
   --font-size-5xl: 3rem;
-  /* 48px */
   --font-size-6xl: 3.75rem;
-  /* 60px */
   --font-size-7xl: 4.5rem;
-  /* 72px */
 
   /* Font Weights */
   --font-weight-normal: 400;
@@ -129,18 +135,13 @@
   /* 32px */
   --radius-full: 9999px;
 
-  /* Shadows - Enhanced */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-
-  /* Modern Glow Effects - Blue Theme */
-  --glow-primary: 0 0 20px rgba(15, 76, 129, 0.3);
-  --glow-accent: 0 0 20px rgba(234, 88, 12, 0.3);
-  --glow-secondary: 0 0 20px rgba(22, 163, 74, 0.3);
+  /* Shadows - Dark Mode Optimized */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 20px rgba(249, 115, 22, 0.2);
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
