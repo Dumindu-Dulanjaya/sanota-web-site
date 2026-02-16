@@ -76,6 +76,25 @@
     align-items: center;
     gap: 4px;
     font-family: var(--font-primary);
+    position: relative;
+    /* Needed for triangle positioning */
+}
+
+/* Triangle Indicator */
+.nav-list a::after,
+.nav-dropdown-button::after {
+    content: '';
+    position: absolute;
+    bottom: -32px;
+    /* Position at the bottom of the 80px header (approx distance from center) */
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent #2233AD transparent;
+    /* Blue pointing up */
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    opacity: 0;
 }
 
 .nav-list a:hover,
@@ -83,8 +102,17 @@
 .nav-dropdown:hover .nav-dropdown-button,
 .nav-list a.active,
 .nav-dropdown-button.active {
-    color: var(--color-primary);
-    /* Orange Accent */
+    color: #2233AD;
+    /* Blue Accent */
+}
+
+.nav-list a:hover::after,
+.nav-dropdown-button:hover::after,
+.nav-dropdown:hover .nav-dropdown-button::after,
+.nav-list a.active::after,
+.nav-dropdown-button.active::after {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
 }
 
 /* Dropdown Arrow */
@@ -112,7 +140,7 @@
     transform: translateX(-50%) translateY(10px);
     background: #111;
     border: 1px solid #333;
-    border-top: 2px solid var(--color-primary);
+    border-top: 2px solid #2233AD;
     padding: var(--spacing-xs) 0;
     min-width: 240px;
     opacity: 0;
@@ -158,7 +186,7 @@
 }
 
 .nav-dropdown-item:hover .nav-dropdown-title {
-    color: var(--color-primary);
+    color: #2233AD;
 }
 
 /* Right Actions */
@@ -187,7 +215,7 @@
 
 .social-icon:hover {
     opacity: 1;
-    color: var(--color-primary);
+    color: #2233AD;
 }
 
 /* Quote Button */
@@ -226,7 +254,7 @@
 
 .login-link:hover {
     opacity: 1;
-    color: var(--color-primary);
+    color: #2233AD;
 }
 
 /* Responsive */
