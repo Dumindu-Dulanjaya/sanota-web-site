@@ -256,3 +256,82 @@
         font-size: 0.75rem !important;
     }
 }
+
+/* Social Icons Styling */
+.social-icons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #2233AD !important;
+    border-radius: 4px;
+    /* Slight rounding or 0 for square */
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #2233AD !important;
+    border-color: #2233AD !important;
+    color: #ffffff !important;
+}
+
+.social-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Tooltip for Social Icons */
+.social-icon {
+    position: relative;
+}
+
+.social-icon::before {
+    content: attr(data-name);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 6px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.social-icon::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #1a1a1a transparent transparent transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.social-icon:hover::before,
+.social-icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
