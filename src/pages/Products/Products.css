@@ -194,3 +194,130 @@
         margin-top: -40px;
     }
 }
+
+/* 4. Product Catalog Grid */
+.product-catalog-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    /* Light background for contrast */
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.catalog-card {
+    position: relative;
+    height: 300px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.catalog-card:hover {
+    transform: translateY(-5px);
+}
+
+.catalog-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.catalog-card:hover .catalog-image {
+    transform: scale(1.05);
+}
+
+.catalog-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #111;
+    /* Solid dark bar */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.catalog-title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 65%;
+    text-align: left;
+}
+
+.btn-more {
+    background-color: #2233AD;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: capitalize;
+    /* "More....." usually isn't all caps in this style */
+    border-radius: 0;
+    /* Rectangular as requested */
+    margin-left: auto;
+    /* Push to right */
+}
+
+.btn-more:hover {
+    background-color: #1a2a8e;
+}
+
+
+
+/* Pagination */
+.catalog-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.page-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-btn:hover,
+.page-btn.active {
+    background-color: #2233AD;
+    /* Blue */
+    color: #ffffff;
+    border-color: #2233AD;
+}
+
+/* Responsive Catalog */
+@media (max-width: 992px) {
+    .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+}
