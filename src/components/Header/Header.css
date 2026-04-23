@@ -47,7 +47,7 @@
 .nav-list {
     display: flex;
     list-style: none;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-md);
     margin: 0;
     padding: 0;
     align-items: center;
@@ -61,12 +61,12 @@
 .nav-dropdown-button {
     color: #aeaeae;
     /* Muted Text */
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 700;
     /* Bolder to match screenshot */
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
     transition: color 0.3s ease;
     background: none;
     border: none;
@@ -223,12 +223,13 @@
     background-color: #2233AD !important;
     /* Forced Blue */
     color: #fff !important;
-    font-size: 0.8rem !important;
+    font-size: 0.75rem !important;
     font-weight: 700 !important;
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 0;
     /* Square/Sharp edges as per screenshot */
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 
 .quote-button:hover {
@@ -258,19 +259,22 @@
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
     .nav-list {
-        gap: var(--spacing-md);
+        gap: 12px;
+    }
+    .nav-list a, .nav-dropdown-button {
+        font-size: 0.7rem;
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
     .nav {
         display: none;
     }
 
-    .social-icons {
-        display: none;
+    .header-actions {
+        gap: 12px;
     }
 }
 
@@ -280,86 +284,7 @@
     }
 
     .quote-button {
-        padding: 10px 16px;
-        font-size: 0.75rem !important;
+        padding: 8px 12px;
+        font-size: 0.65rem !important;
     }
-}
-
-/* Social Icons Styling */
-.social-icons {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-}
-
-.social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border: 1px solid #2233AD !important;
-    border-radius: 4px;
-    /* Slight rounding or 0 for square */
-    color: #ffffff !important;
-    transition: all 0.3s ease;
-}
-
-.social-icon:hover {
-    background-color: #2233AD !important;
-    border-color: #2233AD !important;
-    color: #ffffff !important;
-}
-
-.social-icon svg {
-    width: 16px;
-    height: 16px;
-}
-
-/* Tooltip for Social Icons */
-.social-icon {
-    position: relative;
-}
-
-.social-icon::before {
-    content: attr(data-name);
-    position: absolute;
-    bottom: 120%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background: #1a1a1a;
-    color: #fff;
-    font-size: 0.75rem;
-    padding: 6px 10px;
-    border-radius: 4px;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    pointer-events: none;
-    font-weight: 500;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-}
-
-.social-icon::after {
-    content: '';
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    border-width: 5px;
-    border-style: solid;
-    border-color: #1a1a1a transparent transparent transparent;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    pointer-events: none;
-}
-
-.social-icon:hover::before,
-.social-icon:hover::after {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
 }

@@ -6,7 +6,38 @@ import controlIcon from '../../assets/icon1 (1).png';
 import customIcon from '../../assets/icon1 (2).png';
 import sensorIcon from '../../assets/icon1 (3).png';
 import softwareIcon from '../../assets/icon1 (4).png';
+
 // Using placeholder icons or existing assets where possible, matching the 5 cards
+
+// Additional images for Catalog Grid
+import prod1 from '../../assets/img1.png';
+import prod2 from '../../assets/img2.png';
+import prod3 from '../../assets/img3.png';
+import prod4 from '../../assets/img4.png';
+import prod5 from '../../assets/img5.png';
+import prod6 from '../../assets/picture22.png'; // Keeping one as placeholder or maybe img1 again? 
+// User said "add img1,img2,img3,img4,img5". That's 5 images. I have 6 cards.
+// I'll use img1 for the 6th card as well, or maybe img5 again. 
+// Actually, let's look at the mapping. 
+// Card 1: Industrial PLC Systems -> prod2 (was picture2)
+// Card 2: SCADA -> prod4 (was picture4)
+// Card 3: HMI -> prod6 (was picture22)
+// Card 4: VFD -> prod1 (was picture1)
+// Card 5: Sensors -> prod3 (was picture3)
+// Card 6: MES -> prod5 (was picture5)
+
+// I will map:
+// Card 1 -> img1
+// Card 2 -> img2
+// Card 3 -> img3
+// Card 4 -> img4
+// Card 5 -> img5
+// Card 6 -> img1 (Recycle img1 or maybe just use img5) - User only gave 5. I'll use img1 for the last one or leave the 6th card as is?
+// "to that sections" (plural/singular?). 
+// Let's assume they want these 5 images for the first 5 cards.
+// I will import them as img1, img2... and use them.
+
+
 
 function Products() {
     return (
@@ -100,6 +131,74 @@ function Products() {
                             <p>Real-time monitoring and control solutions.</p>
                         </div>
 
+                    </div>
+                </div>
+            </section>
+
+            {/* 4. Product Catalog Grid */}
+            <section className="product-catalog-section">
+                <div className="container">
+                    <div className="catalog-grid">
+                        {/* Card 1 */}
+                        <div className="catalog-card">
+                            <img src={prod1} alt="Industrial PLC Systems" className="catalog-image" />
+                            <div className="catalog-overlay">
+                                <h3 className="catalog-title">Industrial PLC Systems</h3>
+                                <button className="btn-more">More.....</button>
+                            </div>
+                        </div>
+
+                        {/* Card 2 */}
+                        <div className="catalog-card">
+                            <img src={prod2} alt="SCADA Software Platforms" className="catalog-image" />
+                            <div className="catalog-overlay">
+                                <h3 className="catalog-title">SCADA Software Platforms</h3>
+                                <button className="btn-more">More.....</button>
+                            </div>
+                        </div>
+
+                        {/* Card 3 */}
+                        <div className="catalog-card">
+                            <img src={prod3} alt="Industrial HMI Panels" className="catalog-image" />
+                            <div className="catalog-overlay">
+                                <h3 className="catalog-title">Industrial HMI Panels</h3>
+                                <button className="btn-more">More...</button>
+                            </div>
+                        </div>
+
+                        {/* Card 4 */}
+                        <div className="catalog-card">
+                            <img src={prod4} alt="Variable Frequency Drives" className="catalog-image" />
+                            <div className="catalog-overlay">
+                                <h3 className="catalog-title">Variable Frequency Drives</h3>
+                                <button className="btn-more">More...</button>
+                            </div>
+                        </div>
+
+                        {/* Card 5 */}
+                        <div className="catalog-card">
+                            <img src={prod5} alt="Industrial Sensors & Transmitters" className="catalog-image" />
+                            <div className="catalog-overlay">
+                                <h3 className="catalog-title">Industrial Sensors & Transmitters</h3>
+                                <button className="btn-more">More...</button>
+                            </div>
+                        </div>
+
+                        {/* Card 6 - Reusing prod1 since only 5 images provided */}
+                        <div className="catalog-card">
+                            <img src={prod1} alt="MES Software Solutions" className="catalog-image" />
+                            <div className="catalog-overlay">
+                                <h3 className="catalog-title">MES Software Solutions</h3>
+                                <button className="btn-more">More...</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Pagination */}
+                    <div className="catalog-pagination">
+                        <button className="page-btn active">1</button>
+                        <button className="page-btn">2</button>
+                        <button className="page-btn next">»</button>
                     </div>
                 </div>
             </section>
